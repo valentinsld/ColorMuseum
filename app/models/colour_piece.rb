@@ -1,0 +1,2 @@
+class ColourPiece < ApplicationRecord
+end
