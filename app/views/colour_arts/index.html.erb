@@ -1,0 +1,82 @@
+<!--
+<p id="notice"><%= notice %></p>
+
+<h1>Colour Arts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Url</th>
+      <th>Colorrank</th>
+      <th>Color</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colour_arts.each do |colour_art| %>
+      <tr>
+        <td><%= colour_art.name %></td>
+        <td><%= colour_art.author %></td>
+        <td><%= colour_art.url %></td>
+        <td><%= colour_art.colorRank %></td>
+        <td><%= colour_art.color %></td>
+        <td><%= colour_art.description %></td>
+        <td><%= link_to 'Show', colour_art %></td>
+        <td><%= link_to 'Edit', edit_colour_art_path(colour_art) %></td>
+        <td><%= link_to 'Destroy', colour_art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Colour Art', new_colour_art_path %>
+-->
+
+<h1>Colored Pieces</h1>
+
+<%= link_to 'New Colour Art', new_colour_art_path, :class=>'new' %>
+
+
+<div id="wheel">
+
+  <% @colour_arts.each do |colour_art| %>
+    <%= link_to colour_art, :id=>'img' do %>
+      <img src="<%= colour_art.url %>" />
+    <% end %>
+  <% end %>
+  
+</div>
+
+<div id="height">
+</div>
+
+
+<script>
+
+var images = document.getElementsByTagName('img')
+var nbImage = images.length
+var wheel = document.getElementById('wheel')
+var deg = 360 / nbImage
+var scrollPos = 0;
+var y = 0
+/*
+var h = document.getElementById('height')
+var heightPage =  Math.PI * h.offsetWidth
+h.style.height = Math.round(heightPage) + 'px'*/
+
+for (let i = 0 ; i < nbImage ; i++ ){
+  images[i].style.transform = 'translatey(calc(-200vh + 15vh)) rotate(' + deg*i + 'deg)'
+} // calc : (-)moitié height div + moitié height Img
+
+window.addEventListener('scroll', function() {
+  var y = window.scrollY /10
+  wheel.style.transform = 'rotate(-' + y + 'deg)'
+})
+
+</script>

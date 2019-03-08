@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @colour_art.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @colour_art.author %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @colour_art.url %><br>
+  <img class="showIMage" src="<%= @colour_art.url %>" />
+</p>
+
+<p>
+  <strong>Color rank:</strong>
+  <%= @colour_art.colorRank %> /256
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @colour_art.color %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @colour_art.description %>
+</p>
+
+<%= link_to 'Edit', edit_colour_art_path(@colour_art) %> |
+<%= link_to 'Back', colour_arts_path %> |
+<%= link_to 'Destroy', colour_art_path(@colour_art), method: :delete, data: { confirm: 'Are you sure?' } %>

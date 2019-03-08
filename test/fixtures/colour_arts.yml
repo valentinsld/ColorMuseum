@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  author: MyString
+  url: MyString
+  colorRank: 1.5
+  color: MyString
+  description: MyText
+
+two:
+  name: MyString
+  author: MyString
+  url: MyString
+  colorRank: 1.5
+  color: MyString
+  description: MyText

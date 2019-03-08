@@ -1,0 +1,2 @@
+module ColourArtsHelper
+end

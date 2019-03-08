@@ -1,0 +1,47 @@
+<%= form_with(model: colour_art, local: true) do |form| %>
+  <% if colour_art.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(colour_art.errors.count, "error") %> prohibited this colour_art from being saved:</h2>
+
+      <ul>
+      <% colour_art.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :colorRank %>
+    <%= form.range_field :colorRank, :min=>0, :max=>255, :class=>"" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

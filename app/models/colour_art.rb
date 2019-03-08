@@ -1,0 +1,2 @@
+class ColourArt < ApplicationRecord
+end
